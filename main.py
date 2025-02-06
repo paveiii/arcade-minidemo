@@ -8,13 +8,12 @@ Artwork from https://kenney.nl
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.sprite_collect_coins
 """
-
 import random
 import arcade
 
 # --- Constants ---
-SPRITE_SCALING_PLAYER = 0.5
-SPRITE_SCALING_COIN = .25
+SPRITE_SCALING_PLAYER = 0.25
+SPRITE_SCALING_COIN = 0.25
 COIN_COUNT = 50
 
 SCREEN_WIDTH = 800
@@ -54,9 +53,9 @@ class MyGame(arcade.Window):
         self.score = 0
 
         # Set up the player
-        # Character image from kenney.nl
-        img = ":resources:images/animated_characters/female_person/femalePerson_idle.png"
-        self.player_sprite = arcade.Sprite(img, SPRITE_SCALING_PLAYER)
+        # Character image from Miami
+
+        self.player_sprite = arcade.Sprite(r"C:\Users\pavei\Desktop/SprJacketHM1.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.player_list.append(self.player_sprite)
@@ -66,8 +65,7 @@ class MyGame(arcade.Window):
 
             # Create the coin instance
             # Coin image from kenney.nl
-            coin = arcade.Sprite(":resources:images/items/coinGold.png",
-                                 SPRITE_SCALING_COIN)
+            coin = arcade.Sprite(r"C:\Users\pavei\Desktop/HM1sprRussianGangster.png",SPRITE_SCALING_COIN)
 
             # Position the coin
             coin.center_x = random.randrange(SCREEN_WIDTH)
