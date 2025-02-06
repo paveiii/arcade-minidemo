@@ -32,6 +32,7 @@ class MyGame(arcade.Window):
         # Variables that will hold sprite lists
         self.player_list = None
         self.coin_list = None
+        self.corpse_list = None
 
         # Set up the player info
         self.player_sprite = None
@@ -48,6 +49,7 @@ class MyGame(arcade.Window):
         # Sprite lists
         self.player_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
+        self.corpse_list = arcade.SpriteList()
 
         # Score
         self.score = 0
@@ -79,6 +81,7 @@ class MyGame(arcade.Window):
         self.clear()
         self.coin_list.draw()
         self.player_list.draw()
+        self.corpse_list.draw()
 
         # Put the text on the screen.
         output = f"Score: {self.score}"
@@ -101,7 +104,12 @@ class MyGame(arcade.Window):
 
         # Loop through each colliding sprite, remove it, and add to the score.
         for coin in coins_hit_list:
+            self.corpse = arcade.Sprite(r"C:\Users\pavei\Desktop/164433.png", 3)
+            self.corpse.center_x = coin.position[0]
+            self.corpse.center_y = coin.position[1]
+
             coin.remove_from_sprite_lists()
+            self.corpse_list.append(self.corpse)
             self.score += 1
 
 
