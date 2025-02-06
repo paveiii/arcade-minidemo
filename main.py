@@ -57,7 +57,7 @@ class MyGame(arcade.Window):
         # Set up the player
         # Character image from Miami
 
-        self.player_sprite = arcade.Sprite(r"~/Sprite/SprJacketHM1.png", SPRITE_SCALING_PLAYER)
+        self.player_sprite = arcade.Sprite(r"./Sprite/SprJacketHM1.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.player_list.append(self.player_sprite)
@@ -67,7 +67,7 @@ class MyGame(arcade.Window):
 
             # Create the coin instance
             # Coin image from kenney.nl
-            coin = arcade.Sprite(r"~/Sprite/HM1sprRussianGangster.png",SPRITE_SCALING_COIN)
+            coin = arcade.Sprite(r"./Sprite/HM1sprRussianGangster.png",SPRITE_SCALING_COIN)
 
             # Position the coin
             coin.center_x = random.randrange(SCREEN_WIDTH)
@@ -104,7 +104,7 @@ class MyGame(arcade.Window):
 
         # Loop through each colliding sprite, remove it, and add to the score.
         for coin in coins_hit_list:
-            self.corpse = arcade.Sprite(r"~/Sprite/164433.png", 3)
+            self.corpse = arcade.Sprite(r"./Sprite/164433.png", 3)
             self.corpse.center_x = coin.position[0]
             self.corpse.center_y = coin.position[1]
 
